@@ -1,0 +1,20 @@
+﻿@model InterviewTestTemplatev2.Models.BonusPoolCalculatorResultModel
+
+@{
+    ViewBag.Title = "Calculate";
+}
+<h2>Bonus Pool Allocation</h2>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <p>
+        <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+    </p>                    
+}
+else
+{
+    <p>The bonus pool allocation for @Html.DisplayFor(model => model.Employee.Full_Name) is: £@Html.DisplayFor(model => model.BonusPoolAllocation)</p>
+
+}
+
+@Html.ActionLink("Click her to calculate for another employee", "Index")
